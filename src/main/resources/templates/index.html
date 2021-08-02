@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang=”en” xmlns:th=”https://www.thymeleaf.org”>
+<head>
+    <meta charset=”UTF-8”/>
+    <title>Title</title>
+</head>
+<body>
+
+<!--User login dropdown start -->
+<li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+        <span class="profile-ava">
+            <img alt="" src="@{ '/img/photos' +  ${#authentication.getPrincipal().getUsername()} + '.jpg' }">
+        </span>
+        <span class="username" th:text="${#authentication.getPrincipal().getUsername()}">Guest</span>
+        <b class="caret"></b>
+    </a>
+
+</li>
+
+
+<h2> Welcome Page</h2>
+<a th:href="@{/admin}">Admin Page</a>
+<br>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout">
+    </form>
+</a>
+
+THIS PAGE WILL HOLD DEPARTMENT DETAILS
+</body>
+</html>

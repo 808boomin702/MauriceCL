@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang=”en” xmlns:th=”https://www.thymeleaf.org”>
+<head>
+    <meta charset=”UTF-8”/>
+    <title>Title</title>
+</head>
+<body>
+<h1>Admin Page</h1>
+
+<!--User login dropdown start -->
+<li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+        <span class="profile-ava">
+            <img alt="" src="@{ '/img/photos/' +  ${#authentication.getPrincipal().getUsername()} + '.jpg' }">
+        </span>
+        <span class="username" th:text="${#authentication.getPrincipal().getUsername()}">Guest</span>
+        <b class="caret"></b>
+    </a>
+</li>
+
+THIS PAGE WILL HOLD EMPLOYEE DATA DETAILS
+</body>
+</html>
